@@ -1,0 +1,24 @@
+{% extends "cliente/base.html" %}
+
+	{% block js %}
+		<script>
+			$(document).ready(function (){
+				$("input").addClass("form-control");
+				$("textarea").addClass("form-control");
+				$("select").addClass("form-control");
+			});
+
+		</script>
+	{% endblock js %}
+
+
+	{% block conteudo %}
+		<form action="{% url 'cliente:cadastra' %}" method="post">
+			<table class="table table-striped">
+				{{ form.as_table }}
+
+				<tr><td> <input type="submit" value="Enviar" class="btn btn-primary"/> </td></tr>
+
+			</table>
+		</form>	
+	{% endblock conteudo %}

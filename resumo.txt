@@ -1,0 +1,22 @@
+iniciar um projeto -> django-admin startproject nomedoprojeto
+
+
+iniciar um aplicativo -> Entrar na pasta onde está o "manage.py"
+						 python3 manage.py startapp nomedoaplicativo
+
+
+Instalar o aplicativo -> No arquivo settings.py
+
+Crio os meu models -> No arquivo models.py
+
+Migração do model para o banco de dados -> python3 manage.py makemigrations
+										   python3 manage.py migrate
+
+Registro do model no site do admin -> No arquivo admin.py
+
+Crio um superusuário -> python3 manage.py createsuperuser
+
+Inicio o servidor de desenvolvimento -> python3 manage.py runserver
+
+Abro a página do admin -> No navagedor, no endereco localhost:8000
+

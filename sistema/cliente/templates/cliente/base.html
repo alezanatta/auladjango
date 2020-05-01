@@ -1,0 +1,113 @@
+{% load static %}
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Alexandre">
+		{% block title %}
+			<title>Meu sistema</title>
+		{% endblock title %}
+		
+
+		{% comment Javascript %}{% endcomment %}
+		<script src="{% static 'cliente/js/jquery.min.js' %}"></script>
+		<script src="{% static 'cliente/js/bootstrap.min.js' %}"></script>
+		{% block js %}
+		{% endblock js %}
+
+		{% comment CSS %}{% endcomment %}
+		<link href="{% static 'cliente/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+		{% block css %}
+		{% endblock css %}
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+			{% block abacate %}
+				<a class="navbar-brand ml-md-4 ml-lg-5" href="{% url 'cliente:abacate' %}">Abacate</a>
+			{% endblock abacate %}
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+    	</nav>
+
+		
+		<div class="mt-4">
+			{% block conteudo %}
+			{% endblock conteudo %}
+		<div class="mb-4">
+		<!-- Footer -->
+	<footer class="page-footer font-small footer-color bg-dark pt-4">
+		<!-- Footer Links -->
+		<div class="container-fluid text-center text-md-left">
+			<!-- Grid row -->
+			<div class="row">
+				<!-- Grid column -->
+				<div class="col-md-6 mt-md-0 mt-3">
+				<!-- Content -->
+					<h5 class="text-uppercase">Footer Content</h5>
+					<p>Here you can use rows and columns to organize your footer content.</p>
+				</div>
+				<!-- Grid column -->
+				<hr class="clearfix w-100 d-md-none pb-3">
+				<!-- Grid column -->
+				<div class="col-md-3 mb-md-0 mb-3">
+					<!-- Links -->
+					<h5 class="text-uppercase">Links</h5>
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Link 1</a>
+						</li>
+						<li>
+							<a href="#!">Link 2</a>
+						</li>
+						<li>
+							<a href="#!">Link 3</a>
+						</li>
+						<li>
+							<a href="#!">Link 4</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Grid column -->
+				<!-- Grid column -->
+				<div class="col-md-3 mb-md-0 mb-3">
+					<!-- Links -->
+					<h5 class="text-uppercase">Links</h5>
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Link 1</a>
+						</li>
+						<li>
+							<a href="#!">Link 2</a>
+						</li>
+						<li>
+							<a href="#!">Link 3</a>
+						</li>
+						<li>
+							<a href="#!">Link 4</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Grid column -->
+			</div>
+			<!-- Grid row -->
+		</div>
+		<!-- Footer Links -->
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2019 Copyright:
+			<a href="#"></a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
+
+
+
+	</body>
+</html>
+

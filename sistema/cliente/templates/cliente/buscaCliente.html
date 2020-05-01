@@ -1,0 +1,24 @@
+{% extends "cliente/base.html" %}
+
+
+	{% block conteudo %}
+	{% if clientes %}
+		<table class="table table-striped">
+			<tr>
+				<td>Nome do cliente</td>
+				<td>CPF</td>
+				<td>Email</td>
+			</tr>
+
+			{% for cliente in clientes %}		
+				<tr>	
+					<td>{{ cliente.nm_cliente }}</td>
+					<td>{{ cliente.nr_cpf }}</td>
+					<td>{{ cliente.email }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<div class="alert alert-info">Nenhum cliente cadastrado</div>
+	{% endif %}
+	{% endblock conteudo %}
