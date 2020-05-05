@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 
 from django.utils.translation import gettext_lazy as _
@@ -42,3 +43,8 @@ class ClienteForm(ModelForm):
 	class Meta:
 		model = Cliente
 		fields = "__all__"
+
+class BuscaClienteForm(forms.Form):
+	nm_cliente = forms.CharField(max_length=45)
+	dt_nascimento = forms.CharField(max_length=10)
+	email = forms.EmailField(required=False)

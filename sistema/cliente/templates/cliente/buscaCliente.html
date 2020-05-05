@@ -2,12 +2,20 @@
 
 
 	{% block conteudo %}
+
+		<form action="" method="post" class="form form-inline">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="Vai" />
+		</form>
+
 	{% if clientes %}
 		<table class="table table-striped">
 			<tr>
 				<td>Nome do cliente</td>
 				<td>CPF</td>
 				<td>Email</td>
+				<td>Data de nascimento</td>
 			</tr>
 
 			{% for cliente in clientes %}		
@@ -15,6 +23,7 @@
 					<td>{{ cliente.nm_cliente }}</td>
 					<td>{{ cliente.nr_cpf }}</td>
 					<td>{{ cliente.email }}</td>
+					<td>{{ cliente.dt_nascimento }}</td>
 				</tr>
 			{% endfor %}
 		</table>

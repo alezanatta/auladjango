@@ -7,6 +7,7 @@ from datetime import datetime
 from .forms import CidadeForm
 from .forms import EnderecoForm
 from .forms import ClienteForm
+from .forms import BuscaClienteForm
 
 #Models
 from .models import Cliente
@@ -81,9 +82,24 @@ def clienteCadastro(request):
 #Buscar clientes
 def clienteBusca(request):
 	
-	clientes = Cliente.objects.all()
+	clientes = []
+	form = BuscaClienteForm()
+
+	if request.method == "POST":
+		resultado = BuscaClienteForm(request.POST)
+		if resultado.is_valid():
+			nome = resultado.cleaned_data["nm_cliente"]
+			dtNascimento = resultado.cleaned_data["dt_nascimento"]
+			email = resultado.cleaned_data["email"]
+
+			clientes = Cliente.objects.exclude(nm_cliente=nome)
+		else:
+			pass
+	else:
+		clientes = Cliente.objects.all()
+
 	
-	context = {"clientes":clientes}
+	context = {"clientes":clientes, "form":form}
 	#context = {}
 
 	return render(request, "cliente/buscaCliente.html", context)
